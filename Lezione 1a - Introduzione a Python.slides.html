@@ -13242,9 +13242,21 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduzione-a-Python">Introduzione a Python<a class="anchor-link" href="#Introduzione-a-Python">&#182;</a></h1><p><a href="https://www.python.org">https://www.python.org</a></p>
+<h1 id="PLS----Big-data-e-network-tra-fisica-e-biologia">PLS -  Big data e network tra fisica e biologia<a class="anchor-link" href="#PLS----Big-data-e-network-tra-fisica-e-biologia">&#182;</a></h1><h3 id="A.A.-2020/2021">A.A. 2020/2021<a class="anchor-link" href="#A.A.-2020/2021">&#182;</a></h3><ul>
+<li>claudia.sala3@unibo.it</li>
+<li>alessandra.merlotti2@unibo.it</li>
+<li>tommaso.matteuzzi2@unibo.it</li>
+</ul>
 <p>Potete trovare queste lezioni sul sito github del gruppo di biofisica:</p>
 <p><a href="https://github.com/UniboDIFABiophysics/PLSBigDataNetworks">https://github.com/UniboDIFABiophysics/PLSBigDataNetworks</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Introduzione-a-Python">Introduzione a Python<a class="anchor-link" href="#Introduzione-a-Python">&#182;</a></h1><p><a href="https://www.python.org">https://www.python.org</a></p>
 <p>Un ottimo tutorial online lo potete trovare alla pagina:</p>
 <p><a href="http://www.scipy-lectures.org/">http://www.scipy-lectures.org/</a></p>
 
@@ -13265,10 +13277,10 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Il <strong>Python</strong> è un linguaggio interpretato di alto livello.</p>
-<p>Questa è una maniera complicata per dire che evita moltissimi dei dolori della programmazione classica: il fatto che sia interpretato significa che non sono necessari step di compilazione, rendendo più semplice il ciclo sviluppo - esecuzione - correzione</p>
-<p>Python ha come principale linea guida il concetto di <strong>leggibilità</strong>, cercando il più possibile di rendere semplice agli sviluppatori scrivere librerie semplici ed intuitive.</p>
-<p>Questo permette di utilizzare soltanto python per sviluppare i prototipi del codice fino ad arrivare al codice di produzione, semplificando e velocizzando l'intero processo che parte dall'idea che si vuole implementare fino ad ottenere il risultato finale.</p>
+<p><strong>Python</strong> è un linguaggio interpretato di alto livello.</p>
+<p>Questa è una maniera complicata per dire che evita moltissimi dei dolori della programmazione classica.</p>
+<p><strong>"Interpretato"</strong> significa che non sono necessari step di compilazione. Questo rende più semplice il ciclo sviluppo - esecuzione - correzione</p>
+<p><strong>"Di alto livello"</strong> significa che è molto diverso dal linguaggio macchina. Python ha come principale linea guida il concetto di <strong>leggibilità</strong>, cercando il più possibile di rendere semplice agli sviluppatori scrivere librerie semplici ed intuitive.</p>
 
 </div>
 </div>
@@ -13289,27 +13301,12 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Permette inoltre di programmare con molti approcci diversi:</p>
-<ul>
-<li>procedurale</li>
-<li>ad oggetti</li>
-<li>funzionale</li>
-<li>vettoriale</li>
-</ul>
-<p>Faremo una breve introduzione alla programmazione in pyhton, senza entrare nel dettaglio delle caratteristiche del linguaggio, introducendo quindi solo una parte delle possibilità offerte da questo linguaggio e dalle sue librerie.</p>
-<p>Conoscere un minimo di python e delle sue librerie di calcolo numerico ci permetterà di toccare con mano molti dei problemi che affronteremo lungo il corso.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="Utilizzare-Python">Utilizzare Python<a class="anchor-link" href="#Utilizzare-Python">&#182;</a></h2><p>Esistono molti modi diversi di lavorare tramite Python.</p>
-<p>Il fondamentale è tramite la shell di python, un terminale che esegue le righe di comando mano a mano che vengono inserite, ed è estremamente utile per testare il codice al volo prima di inserirlo dentro un programma. Il terminale di python si può lanciare da terminale digitando <strong>python</strong>.</p>
-
-<pre><code>&gt;&gt;&gt; Dimostrazione</code></pre>
+<p>Il fondamentale è tramite la <strong>shell di python</strong>, un terminale che esegue le righe di comando mano a mano che vengono inserite, ed è estremamente utile per testare il codice al volo prima di inserirlo dentro un programma. Il terminale di python si può lanciare da terminale digitando <strong>python</strong>.</p>
+<p><img src="img/python_shell.png" width="800" align="left"></p>
+<p><br>
+<br></p>
 
 </div>
 </div>
@@ -13317,7 +13314,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Il secondo metodo è scrivere uno (o più) script contenente i comandi che si vogliono eseguire, e farlo eseguire da python come un programma qualsiasi tramite il comando</p>
+<p>Il secondo metodo è scrivere uno (o più) <strong>script</strong> contenente i comandi che si vogliono eseguire, e farlo eseguire da python come un programma qualsiasi tramite il comando</p>
 <p><strong>python nomedelfile.py</strong></p>
 
 </div>
@@ -13327,7 +13324,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Le cose più interessanti si trovano però andando a cercare fra i vari programmi disponibili.</p>
-<p>Uno degli editor più famosi per il calcolo scientifico in python è <strong>Spyder</strong> (<a href="http://code.google.com/p/spyderlib/">http://code.google.com/p/spyderlib/</a>), che fornisce un'interfaccia molto simile a quella di Matlab. È un programma molto solido e funzionale, ed è un'ottima piattaforma su cui lavorare.</p>
+<p>Uno degli editor più famosi per il calcolo scientifico in python è <strong>Spyder</strong> (<a href="http://code.google.com/p/spyderlib/">http://code.google.com/p/spyderlib/</a>), che fornisce un'interfaccia molto simile a quella di Matlab e di RStudio. È un programma molto solido e funzionale, ed è un'ottima piattaforma su cui lavorare.</p>
 <p>Un altro approccio è l'utilizzo di un IDE (Integrated Development Environment) completo, quale PyCharm, Wing o Eclipse. Il mio personale preferito, molto più semplice ma con tutte le funzioni che mi servono è <strong>Atom</strong> (<a href="https://ide.atom.io/">https://ide.atom.io/</a>).</p>
 
 </div>
@@ -13338,9 +13335,9 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Fra tutti lo strumento però in assoluto più potente è sicuramente <strong>IPython</strong> ( <a href="http://ipython.org">http://ipython.org</a> ). IPython fornisce tre programmi:</p>
 <ul>
-<li>la IPython shell, che è descrivibile come un terminale python sotto steroidi, che può tranquillamente sostituire la shell di sistema</li>
+<li>La IPython shell, che è un terminale python potenziato, che può tranquillamente sostituire la shell di sistema</li>
 <li>La QTConsole, che contiene un ibrido fra una shell ed un sistema di gestione tramite GUI, e permette l'utilizzo dei grafici inline invece che in finestre separate.</li>
-<li>Il Notebook, ovvero quello che stò usando in questo momento, che è un'interfaccia web ad un server di esecuzione che permette di mescolare testo, codice, grafica e formule in un unico insieme. In particolare quello che stò usando in questo momento è la versione <strong>3.6</strong> di IPython</li>
+<li>Il Notebook, ovvero quello che sto usando in questo momento, che è un'interfaccia web ad un server di esecuzione che permette di mescolare testo, codice, grafica e formule in un unico insieme. In particolare quello che sto usando in questo momento è la versione <strong>3.6</strong> di IPython</li>
 </ul>
 
 </div>
@@ -13350,11 +13347,22 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Procurarsi-python">Procurarsi python<a class="anchor-link" href="#Procurarsi-python">&#182;</a></h2><p>Python arriva di base installato con un gran numero di librerie sia sotto linux che sotto macOSX, mentre invece va installato da zero su windows.</p>
-<p>Installare nuove librerie è molto semplice sfruttando il programma <strong>pip</strong>, che permette di dire a python quale libreria si desidera e lui la scaricherà ed installerà sul sistema. Il programma è a riga di comando e quasi tutte le librerie numeriche richiedono però la presenza di un compilatore, quindi potrebbe non essere comodo per chi non è abituato a lavorare da terminale.</p>
-<p>Esempio:</p>
+<h2 id="Procurarsi-python">Procurarsi python<a class="anchor-link" href="#Procurarsi-python">&#182;</a></h2><p>Python arriva di base installato con un gran numero di librerie sia sotto Linux che sotto macOSX, mentre invece va installato da zero su Windows.</p>
+<p><strong>Installare nuove librerie</strong> è molto semplice sfruttando il programma <strong>pip</strong>, che permette di dire a python quale libreria si desidera e lui la scaricherà ed installerà sul sistema.</p>
+<p>Per installare pip:</p>
 
-<pre><code>    &gt;&gt;&gt; pip install math</code></pre>
+<pre><code>    conda install -c anaconda pip
+
+
+</code></pre>
+<p>Per installare la libreria math:</p>
+
+<pre><code>    &gt;&gt;&gt; pip install math
+
+</code></pre>
+<p>Oppure direttamente da conda:</p>
+
+<pre><code>conda install -c anaconda math</code></pre>
 
 </div>
 </div>
@@ -13378,7 +13386,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><strong>Wakari</strong>, un sito che offre un ambiente di sviluppo integrato sul browser. Molto completo ma richiede la connessione internet non installando nulla sul pc.</li>
-<li>In modo simile il sito <strong>pythonanywhere</strong> fornisce un servizio gratuito per provare una shell di python online.</li>
+<li>In modo simile i siti <strong>pythonanywhere</strong> e <strong>tutorialspoint</strong> forniscono un servizio gratuito per provare una shell di python online.</li>
 <li>Il servizio <strong>PiCloud</strong>, che fornisce accesso a una rete di supercomputer amazon, fornisce anche la possibilità di lavorare online con dei notebook che girano sui loro server.</li>
 </ul>
 
@@ -13424,16 +13432,24 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ok, questo era facile. Possiamo usare la funzione print per stampare (quasi) qualsiasi cosa.</p>
+<p><img src="img/spyder_note.png" width="900" align="left"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Possiamo usare la funzione print per stampare (quasi) qualsiasi cosa.</p>
 <p>Per esempio usiamo print per vedere i risultati di alcune operazioni matematiche</p>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -13470,7 +13486,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13573,7 +13589,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -13588,14 +13604,18 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ed ora abbiamo accesso a tutte le funzioni necessarie. Se avessimo bisogno di lavorare con i numeri complessi, esiste una libreria gemella chiamata <strong>cmath</strong>.</p>
-<p>Per avere più informazioni sulla libreria che andiamo ad usare possiamo utilizzare due comandi molto utili, <strong>dir</strong> per sapere quali siano le sue funzioni, ed <strong>help</strong> per averne una descrizione. Visto che il risultato di <strong>help(math)</strong> è piuttosto lungo, eviterò di mostrarlo.</p>
+<p>Per avere più informazioni sulla libreria che andiamo ad usare possiamo utilizzare due comandi molto utili:</p>
+<ul>
+<li><strong>dir</strong> per sapere quali siano le sue funzioni</li>
+<li><strong>help</strong> per averne una descrizione (il risultato di <strong>help(math)</strong> è piuttosto lungo, quindi eviterò di mostrarlo)</li>
+</ul>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">))</span>
@@ -13636,7 +13656,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -13652,7 +13672,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13677,7 +13697,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log1p</span><span class="p">)</span>
@@ -13715,7 +13735,7 @@ log1p(...)
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
@@ -13748,7 +13768,7 @@ log1p(...)
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="p">)</span>
@@ -13764,7 +13784,7 @@ log1p(...)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13789,7 +13809,7 @@ log1p(...)
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">radians</span><span class="p">,</span> <span class="n">log1p</span><span class="p">,</span> <span class="n">modf</span>
@@ -13828,7 +13848,7 @@ log1p(...)
 <pre><code>from math import *
 
 </code></pre>
-<p>Evitatelo come la peste.</p>
+<p>Meglio evitarlo!</p>
 <p>Questo comando importa infatti tutti i nomi di funzioni dalla libreria, sovrascrivendo possibili funzioni già esistenti.
 Questo comportamento potrebbe riservarvi delle sorprese molto spiacevoli, e di cui è difficile rendersi conto!</p>
 
@@ -13854,13 +13874,47 @@ Questo comportamento potrebbe riservarvi delle sorprese molto spiacevoli, e di c
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rubrica</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="n">rubrica</span><span class="p">[</span><span class="s1">&#39;Ludovico Fabbri&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;334-5678901&#39;</span><span class="p">,</span> 
-                              <span class="s1">&#39;Via Larga 34, Bo&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rubrica</span><span class="p">[</span><span class="s1">&#39;Ludovico Fabbri&#39;</span><span class="p">])</span>
+
+<span class="n">rubrica</span><span class="p">[</span><span class="s1">&#39;Ludovico Fabbri&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;334-5678901&#39;</span><span class="p">,</span> <span class="s1">&#39;Via Larga 34, Bo&#39;</span><span class="p">)</span>
+
+<span class="n">rubrica</span><span class="p">[</span><span class="s1">&#39;Mario Rossi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;333-4567891&#39;</span><span class="p">,</span> <span class="s1">&#39;Via Stretta 43, Bo&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">rubrica</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;Ludovico Fabbri&#39;: (&#39;334-5678901&#39;, &#39;Via Larga 34, Bo&#39;), &#39;Mario Rossi&#39;: (&#39;333-4567891&#39;, &#39;Via Stretta 43, Bo&#39;)}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">rubrica</span><span class="p">[</span><span class="s1">&#39;Ludovico Fabbri&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13885,7 +13939,7 @@ Questo comportamento potrebbe riservarvi delle sorprese molto spiacevoli, e di c
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13968,9 +14022,9 @@ Questo comportamento potrebbe riservarvi delle sorprese molto spiacevoli, e di c
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="funzioni">funzioni<a class="anchor-link" href="#funzioni">&#182;</a></h3><p>È possibile definire le proprie funzioni tramite il comando <strong>def</strong>.
+<h3 id="Funzioni">Funzioni<a class="anchor-link" href="#Funzioni">&#182;</a></h3><p>È possibile definire le proprie funzioni tramite il comando <strong>def</strong>.
 In questo caso creerò una funzione che prende due oggetti e ne restituisce la somma.</p>
-<p>A python non interessa di che oggetti di tratti, fintantochè sia definita fra di loro una somma.
+<p>A python non interessa di che oggetti si tratti, fintantochè sia definita fra di loro una somma.
 Posso usare questa funzione per sommare indifferentemente fra di loro numeri, stringhe, liste o distribuzioni di probabilità.</p>
 
 </div>
@@ -14017,8 +14071,17 @@ hello world!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="iterazioni">iterazioni<a class="anchor-link" href="#iterazioni">&#182;</a></h3><p>Python supporta le iterazioni sia con il costrutto while che con il for. Il for in pyhton è un ciclo speciale estremamente potente, ed è quindi il modo principale di scrivere cicli.</p>
-<p>Nel classico modo di scrivere cicli, per scorrere una lista di oggetti devo fare un ciclo sopra gli indici della lista, stando attento a trovare bene i bordi, e poi operare sul mio oggetto. Prendiamo ad esempio il caso di voler stampare tutto il contenuto di una lista.</p>
+<h3 id="Iterazioni">Iterazioni<a class="anchor-link" href="#Iterazioni">&#182;</a></h3><p>Python supporta le iterazioni sia con il costrutto <strong>while</strong> che con il <strong>for</strong>.</p>
+<p>Il for in pyhton è un ciclo speciale estremamente potente, ed è quindi il modo principale di scrivere cicli.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Esempio:-Vorrei-stampare-tutti-gli-elementi-di-una-lista.">Esempio: Vorrei stampare tutti gli elementi di una lista.<a class="anchor-link" href="#Esempio:-Vorrei-stampare-tutti-gli-elementi-di-una-lista.">&#182;</a></h3><p><strong>Soluzione 1)</strong> Posso usare gli <strong>indici</strong> per accedere agli elementi della lista.</p>
+<p>Questo metodo non è molto conveniente, specialmente se la lista è lunga!</p>
 
 </div>
 </div>
@@ -14029,10 +14092,66 @@ hello world!
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lista_ingredienti</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pane&#39;</span><span class="p">,</span><span class="s1">&#39;pomodori&#39;</span><span class="p">,</span><span class="s1">&#39;farina&#39;</span><span class="p">,</span><span class="s1">&#39;acqua&#39;</span><span class="p">,</span><span class="s1">&#39;sale&#39;</span><span class="p">,</span><span class="s1">&#39;mozzarella&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_ingredienti</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_ingredienti</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_ingredienti</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_ingredienti</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_ingredienti</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_ingredienti</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>pane
+pomodori
+farina
+acqua
+sale
+mozzarella
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Soluzione 2)</strong> Posso usare un ciclo <strong>while</strong>, ovvero fare un ciclo sopra gli indici della lista e usare tali indici per accedere agli elementi della lista, dal primo all'ultimo.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lista_ingredienti</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pane&#39;</span><span class="p">,</span><span class="s1">&#39;pomodori&#39;</span><span class="p">,</span><span class="s1">&#39;farina&#39;</span><span class="p">,</span><span class="s1">&#39;acqua&#39;</span><span class="p">,</span><span class="s1">&#39;sale&#39;</span><span class="p">,</span><span class="s1">&#39;mozzarella&#39;</span><span class="p">]</span>
+
 <span class="n">lunghezza</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista_ingredienti</span><span class="p">)</span>
+
 <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+
 <span class="k">while</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">lunghezza</span><span class="p">:</span>
+    
     <span class="nb">print</span><span class="p">(</span><span class="n">lista_ingredienti</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    
     <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 
@@ -14067,17 +14186,17 @@ mozzarella
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Due delle linee di questo codice (trovare la lunghezza della lista e ricavarne l'elemento) sono sempre presenti. Per ovviare a queste linee superflue, il python permette di usare il ciclo for per scorrere direttamente gli elementi della lista</p>
+<p><strong>Soluzione 3)</strong> Posso usare il ciclo <strong>for</strong> per scorrere direttamente gli elementi della lista.</p>
 
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lista_ingredienti</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;acqua&quot;</span><span class="p">,</span> <span class="s2">&quot;farina&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lista_ingredienti</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pane&#39;</span><span class="p">,</span><span class="s1">&#39;pomodori&#39;</span><span class="p">,</span><span class="s1">&#39;farina&#39;</span><span class="p">,</span><span class="s1">&#39;acqua&#39;</span><span class="p">,</span><span class="s1">&#39;sale&#39;</span><span class="p">,</span><span class="s1">&#39;mozzarella&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">ingrediente</span> <span class="ow">in</span> <span class="n">lista_ingredienti</span><span class="p">:</span>
     
@@ -14098,97 +14217,12 @@ mozzarella
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>acqua
+<pre>pane
+pomodori
 farina
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Se voglio leggere un file ho a disposizione la funzione <code>open</code>.</p>
-<p>Questa funzione può essere usata per delimitare un blocco di codice all'interno del quale il file è aperto.
-Al termine delle operazioni, questo verrò chiuso in modo automatico e sicuro, evitando che rimanga aperto e venga corrotto da altri processi</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> prova.txt
-<span class="n">tonno</span>
-<span class="n">mandibola</span>
-<span class="n">rum</span>
-<span class="n">pinocchio</span>
-<span class="n">sigmoide</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Overwriting prova.txt
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prova.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&#39;tonno\n&#39;
-6
-&#39;mandibola\n&#39;
-10
-&#39;rum\n&#39;
-4
-&#39;pinocchio\n&#39;
-10
-&#39;sigmoide\n&#39;
-9
+acqua
+sale
+mozzarella
 </pre>
 </div>
 </div>

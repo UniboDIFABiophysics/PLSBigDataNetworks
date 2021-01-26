@@ -13260,9 +13260,9 @@ risorse di quelle a mia disposizione</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Nei-big-data-dobbiamo-fare-delle-scelte">Nei big data dobbiamo fare delle scelte<a class="anchor-link" href="#Nei-big-data-dobbiamo-fare-delle-scelte">&#182;</a></h2><p>Semplificando, ci sono 3 variabili nel nostro sistema:</p>
 <ul>
-<li>il tempo che siamo disponibili ad aspettare</li>
-<li>lo spazio su RAM che siamo disponibili ad allocare</li>
-<li>l'ammontare di informazioni che vogliamo ottenere (statistical power)</li>
+<li>il <strong>tempo</strong> che siamo disponibili ad aspettare</li>
+<li>lo <strong>spazio</strong> su RAM che siamo disponibili ad allocare</li>
+<li>l'ammontare di informazioni che vogliamo ottenere (statistical <strong>power</strong>)</li>
 </ul>
 <p>Tanto più ottimizziamo uno di questi parametri, tanto più ci rimettiamo negli altri due.</p>
 
@@ -13272,7 +13272,7 @@ risorse di quelle a mia disposizione</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://github.com/EnricoGiampieri/PLS2017BigDataNetworks/raw/master/notebookfiles/power_triangle.png" width="400"/></p>
+<p><img src="https://github.com/UniboDIFABiophysics/PLSBigDataNetworks/raw/master/img/power_triangle.png" width="400"/></p>
 
 </div>
 </div>
@@ -13280,7 +13280,7 @@ risorse di quelle a mia disposizione</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://github.com/EnricoGiampieri/PLS2017BigDataNetworks/raw/master/notebookfiles/tradeoff_spazio_velocita.png" width="600"/></p>
+<p><img src="https://github.com/UniboDIFABiophysics/PLSBigDataNetworks/raw/master/img/cpu_memoria.png" width="900"/></p>
 
 </div>
 </div>
@@ -13288,11 +13288,9 @@ risorse di quelle a mia disposizione</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Inoltre, vedremo poi, che tanto più ottimizzeremo il nostro codice, tanto più difficile sarà mantenerlo nel tempo.
-La comprensibilità del nostro codice ha un costo quantificabile!</p>
 <p>Questo schema non tiene conto anche di altri fattori:</p>
 <ul>
-<li>il tradoff fra memoria su disco e su RAM</li>
+<li>la leggibilità e trasferibilità del codice (potremmo scrivere in codice binario)</li>
 <li>il tempo che serve all'analista per produrre il codice</li>
 </ul>
 
@@ -13302,10 +13300,17 @@ La comprensibilità del nostro codice ha un costo quantificabile!</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="un-problema-di-esempio---rinominare-i-file-di-una-collezione-audio">un problema di esempio - rinominare i file di una collezione audio<a class="anchor-link" href="#un-problema-di-esempio---rinominare-i-file-di-una-collezione-audio">&#182;</a></h2><p>Ovviamente si tratta di un problema giocattolo.</p>
-<p>Cosa succederebbe se i file non sono qualche centinaio, ma qualche milione?</p>
-<p>E se per ciascun file non dovessi solo rinominare, ma fare analisi complicate?</p>
-<p>I principi rimangono gli stessi, soltanto più estremi.</p>
+<p><img src="https://github.com/UniboDIFABiophysics/PLSBigDataNetworks/raw/master/img/oph_cluster.png" width="900"/></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Leggere-files-(grandi)">Leggere files (grandi)<a class="anchor-link" href="#Leggere-files-(grandi)">&#182;</a></h2><p>Quando abbiamo a che fare con files molto grandi, per leggerli è utile usare la funzione <code>open</code>.</p>
+<p>Questa funzione può essere usata per delimitare un blocco di codice all'interno del quale il file è aperto.</p>
+<p>Al termine delle operazioni, questo verrà chiuso in modo automatico e sicuro, evitando che rimanga aperto e venga corrotto da altri processi.</p>
 
 </div>
 </div>
@@ -13315,26 +13320,33 @@ La comprensibilità del nostro codice ha un costo quantificabile!</p>
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> rm -fR notebookfiles/fakeaudio
-
-<span class="o">!</span> mkdir -p notebookfiles/fakeaudio
-
-<span class="o">!</span> mkdir -p notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall
-
-<span class="o">!</span> touch notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall/The<span class="se">\ </span>Thin<span class="se">\ </span>Ice.MP3
-
-<span class="o">!</span> touch notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall/Another<span class="se">\ </span>Brick<span class="se">\ </span>In<span class="se">\ </span>The<span class="se">\ </span>Wall<span class="se">\ </span>-<span class="se">\ </span>Part<span class="se">\ </span><span class="m">1</span>.MP3
-
-<span class="o">!</span> mkdir -p notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/
-
-<span class="o">!</span> touch notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/My<span class="se">\ </span>Innermost<span class="se">\ </span>Apocalypse.MP3
-
-<span class="o">!</span> touch notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/NONTOCCARE.TXT
-
-<span class="o">!</span> <span class="nb">echo</span> <span class="s2">&quot;un testo inutile&quot;</span> &gt; notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/NONTOCCARE.TXT
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> prova.txt
+<span class="n">tonno</span>
+<span class="n">mandibola</span>
+<span class="n">rum</span>
+<span class="n">pinocchio</span>
+<span class="n">sigmoide</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting prova.txt
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13344,7 +13356,13 @@ La comprensibilità del nostro codice ha un costo quantificabile!</p>
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> ls -lR notebookfiles/fakeaudio/
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prova.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13361,357 +13379,42 @@ La comprensibilità del nostro codice ha un costo quantificabile!</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>notebookfiles/fakeaudio/:
-totale 8
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 Albums
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 OST
-
-notebookfiles/fakeaudio/Albums:
-totale 4
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 PinkFloyd
-
-notebookfiles/fakeaudio/Albums/PinkFloyd:
-totale 4
-drwxrwxr-x 2 claudia claudia 4096 gen 27 17:18 TheWall
-
-notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall:
-totale 0
--rw-rw-r-- 1 claudia claudia 0 gen 27 17:18 &#39;Another Brick In The Wall - Part 1.MP3&#39;
--rw-rw-r-- 1 claudia claudia 0 gen 27 17:18 &#39;The Thin Ice.MP3&#39;
-
-notebookfiles/fakeaudio/OST:
-totale 4
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 TheBindingOfIsaac
-
-notebookfiles/fakeaudio/OST/TheBindingOfIsaac:
-totale 4
-drwxrwxr-x 2 claudia claudia 4096 gen 27 17:18 Rebirth
-
-notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth:
-totale 4
--rw-rw-r-- 1 claudia claudia  0 gen 27 17:18 &#39;My Innermost Apocalypse.MP3&#39;
--rw-rw-r-- 1 claudia claudia 17 gen 27 17:18  NONTOCCARE.TXT
+<pre>&#39;tonno\n&#39;
+6
+&#39;mandibola\n&#39;
+10
+&#39;rum\n&#39;
+4
+&#39;pinocchio\n&#39;
+10
+&#39;sigmoide\n&#39;
+9
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># pip install os</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
 </div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;./notebookfiles/fakeaudio/&quot;</span>
-<span class="k">for</span> <span class="n">basepath</span><span class="p">,</span> <span class="n">listdir</span><span class="p">,</span> <span class="n">listfiles</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">basepath</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">listdir</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">listfiles</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-./notebookfiles/fakeaudio/
-[&#39;OST&#39;, &#39;Albums&#39;]
-[]
-
-./notebookfiles/fakeaudio/OST
-[&#39;TheBindingOfIsaac&#39;]
-[]
-
-./notebookfiles/fakeaudio/OST/TheBindingOfIsaac
-[&#39;Rebirth&#39;]
-[]
-
-./notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth
-[]
-[&#39;My Innermost Apocalypse.MP3&#39;, &#39;NONTOCCARE.TXT&#39;]
-
-./notebookfiles/fakeaudio/Albums
-[&#39;PinkFloyd&#39;]
-[]
-
-./notebookfiles/fakeaudio/Albums/PinkFloyd
-[&#39;TheWall&#39;]
-[]
-
-./notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall
-[]
-[&#39;Another Brick In The Wall - Part 1.MP3&#39;, &#39;The Thin Ice.MP3&#39;]
-</pre>
-</div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sulla RAM non viene mai caricato tutto il file ma solo una riga alla volta.</p>
 
 </div>
 </div>
-
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;./notebookfiles/fakeaudio/&quot;</span>
-
-<span class="k">for</span> <span class="n">basepath</span><span class="p">,</span> <span class="n">listdir</span><span class="p">,</span> <span class="n">listfiles</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    
-    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">listfiles</span><span class="p">:</span>
-        
-        <span class="n">new_filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-        
-        <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basepath</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span>
-                  
-                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basepath</span><span class="p">,</span> <span class="n">new_filename</span><span class="p">)</span> <span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls -lR notebookfiles/fakeaudio/  # elenca i files di tutte le subdirectories
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>notebookfiles/fakeaudio/:
-totale 8
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 Albums
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 OST
-
-notebookfiles/fakeaudio/Albums:
-totale 4
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 PinkFloyd
-
-notebookfiles/fakeaudio/Albums/PinkFloyd:
-totale 4
-drwxrwxr-x 2 claudia claudia 4096 gen 27 17:18 TheWall
-
-notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall:
-totale 0
--rw-rw-r-- 1 claudia claudia 0 gen 27 17:18 &#39;another brick in the wall - part 1.mp3&#39;
--rw-rw-r-- 1 claudia claudia 0 gen 27 17:18 &#39;the thin ice.mp3&#39;
-
-notebookfiles/fakeaudio/OST:
-totale 4
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 TheBindingOfIsaac
-
-notebookfiles/fakeaudio/OST/TheBindingOfIsaac:
-totale 4
-drwxrwxr-x 2 claudia claudia 4096 gen 27 17:18 Rebirth
-
-notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth:
-totale 4
--rw-rw-r-- 1 claudia claudia  0 gen 27 17:18 &#39;my innermost apocalypse.mp3&#39;
--rw-rw-r-- 1 claudia claudia 17 gen 27 17:18  nontoccare.txt
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>qui però sto anche cambiando il nome a tutti i file che sono presenti nelle directory, anche se non sono dei file audio!</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> rm -fR notebookfiles/fakeaudio
-
-<span class="o">!</span> mkdir -p notebookfiles/fakeaudio
-
-<span class="o">!</span> mkdir -p notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall
-
-<span class="o">!</span> touch notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall/The<span class="se">\ </span>Thin<span class="se">\ </span>Ice.MP3
-
-<span class="o">!</span> touch notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall/Another<span class="se">\ </span>Brick<span class="se">\ </span>In<span class="se">\ </span>The<span class="se">\ </span>Wall<span class="se">\ </span>-<span class="se">\ </span>Part<span class="se">\ </span><span class="m">1</span>.MP3
-
-<span class="o">!</span> mkdir -p notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/
-
-<span class="o">!</span> touch notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/My<span class="se">\ </span>Innermost<span class="se">\ </span>Apocalypse.MP3
-
-<span class="o">!</span> touch notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/NONTOCCARE.TXT
-
-<span class="o">!</span> <span class="nb">echo</span> <span class="s2">&quot;un testo inutile&quot;</span> &gt; notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/NONTOCCARE.TXT
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;./notebookfiles/fakeaudio/&quot;</span>
-
-<span class="k">for</span> <span class="n">basepath</span><span class="p">,</span> <span class="n">listdir</span><span class="p">,</span> <span class="n">listfiles</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-
-    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">listfiles</span><span class="p">:</span>
-    
-        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;mp3&#39;</span><span class="p">):</span>
-            
-            <span class="n">new_filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-            
-            <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basepath</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span>
-            
-                      <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basepath</span><span class="p">,</span> <span class="n">new_filename</span><span class="p">))</span>
-            
-            <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basepath</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>./notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/My Innermost Apocalypse.MP3
-./notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall/Another Brick In The Wall - Part 1.MP3
-./notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall/The Thin Ice.MP3
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> ls -lR notebookfiles/fakeaudio/
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>notebookfiles/fakeaudio/:
-totale 8
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 Albums
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 OST
-
-notebookfiles/fakeaudio/Albums:
-totale 4
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 PinkFloyd
-
-notebookfiles/fakeaudio/Albums/PinkFloyd:
-totale 4
-drwxrwxr-x 2 claudia claudia 4096 gen 27 17:18 TheWall
-
-notebookfiles/fakeaudio/Albums/PinkFloyd/TheWall:
-totale 0
--rw-rw-r-- 1 claudia claudia 0 gen 27 17:18 &#39;another brick in the wall - part 1.mp3&#39;
--rw-rw-r-- 1 claudia claudia 0 gen 27 17:18 &#39;the thin ice.mp3&#39;
-
-notebookfiles/fakeaudio/OST:
-totale 4
-drwxrwxr-x 3 claudia claudia 4096 gen 27 17:18 TheBindingOfIsaac
-
-notebookfiles/fakeaudio/OST/TheBindingOfIsaac:
-totale 4
-drwxrwxr-x 2 claudia claudia 4096 gen 27 17:18 Rebirth
-
-notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth:
-totale 4
--rw-rw-r-- 1 claudia claudia  0 gen 27 17:18 &#39;my innermost apocalypse.mp3&#39;
--rw-rw-r-- 1 claudia claudia 17 gen 27 17:18  NONTOCCARE.TXT
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Queste sono tre operazioni fondalmentali per l'analisi dati:</p>
+<p>Ci sono tre operazioni fondalmentali per l'analisi dati:</p>
 <ul>
 <li>iterazione lazy</li>
 <li>map (ripeti un'operazione su tutti gli elementi)</li>
 <li>filter (seleziona solo una parte degli elementi)</li>
 </ul>
-<p>altri tipi di operazioni che discuteremo saranno:</p>
+<p>Altri tipi di operazioni che discuteremo saranno:</p>
 <ul>
 <li>reduce (comporre insieme gli elementi)</li>
 <li>functional programming</li>
@@ -13794,20 +13497,138 @@ totale 4
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>ma se provo a farlo su di un file, lo posso leggere una volta sola!</p>
+<p>Ma se provo a farlo su di un file, lo posso leggere una volta sola!</p>
 <p>Se volessi rileggerlo, dovrei aprirlo di nuovo!</p>
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> <span class="nb">echo</span> <span class="s2">&quot;un testo inutile&quot;</span> &gt; ./NONTOCCARE.TXT # creiamo il file NONTOCCARE
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> <span class="c1"># pip install os</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;./notebookfiles/fakeaudio/OST/TheBindingOfIsaac/Rebirth/&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1"># in quale cartella mi trovo?</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;/home/claudia/Documenti/Didattica/AA2020_2021/2021_PLS/PLSBigDataNetworks&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="c1"># quali files e sotto-cartelle ci sono?</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Lezione 1a - Introduzione a Python.ipynb&#39;,
+ &#39;Lezione 1b - Iteratori e Big Data.ipynb&#39;,
+ &#39;README.md&#39;,
+ &#39;Lezione 2 - ricostruire la divina commedia con le catene di Markov.slides.html&#39;,
+ &#39;installazione_miniconda3_python_spyder.pdf&#39;,
+ &#39;statistica_singoli_caratteri.tsv&#39;,
+ &#39;statistica_coppie_caratteri.tsv&#39;,
+ &#39;Lezione 1b - Iteratori e Big Data.slides.pdf&#39;,
+ &#39;Lezione 3 - Network Biologici.ipynb&#39;,
+ &#39;Lezione 1a - Introduzione a Python.slides.pdf&#39;,
+ &#39;prova.txt&#39;,
+ &#39;.git&#39;,
+ &#39;Lezione 1a - Introduzione a Python.slides.html&#39;,
+ &#39;img&#39;,
+ &#39;Lezione 2 - ricostruire la divina commedia con le catene di Markov.pdf&#39;,
+ &#39;NONTOCCARE.TXT&#39;,
+ &#39;markov_0_lettere.txt&#39;,
+ &#39;divina_commedia_with_copyright_notice.txt&#39;,
+ &#39;Lezione 3 - Network Biologici.pdf&#39;,
+ &#39;.ipynb_checkpoints&#39;,
+ &#39;Lezione 1b - Iteratori e Big Data.slides.html&#39;,
+ &#39;divinacommedia_cleaned.txt&#39;,
+ &#39;installazione_miniconda3_python_spyder.pptx&#39;,
+ &#39;Lezione 3 - Network Biologici.slides.html&#39;,
+ &#39;Lezione 2 - ricostruire la divina commedia con le catene di Markov.ipynb&#39;,
+ &#39;notebookfiles&#39;,
+ &#39;hsa.txt&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;./&quot;</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;NONTOCCARE.TXT&quot;</span>
-<span class="n">position</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+<span class="n">position</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">+</span> <span class="n">filename</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- prima iterazione ---&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
@@ -13853,14 +13674,17 @@ totale 4
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
 <span class="n">iteratore_lista</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;prima iterazione&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">iteratore_lista</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+    
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;seconda iterazione&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">iteratore_lista</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
@@ -13917,6 +13741,7 @@ seconda iterazione
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">numeri</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
 <span class="n">quadrati</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">numeri</span><span class="p">:</span>
     <span class="n">quadrato</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">**</span><span class="mi">2</span>
@@ -13962,7 +13787,9 @@ seconda iterazione
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">numeri</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
 <span class="n">quadrati</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numeri</span><span class="p">]</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">quadrati</span><span class="p">)</span>
 </pre></div>
 
@@ -13992,7 +13819,7 @@ seconda iterazione
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>il concetto di <strong>map</strong> è un'astrazione di questo procedimento.</p>
+<p>Il concetto di <strong>map</strong> è un'astrazione di questo procedimento.</p>
 <p>Python fornisce una funzione, chiamata appunto <strong>map</strong>, che prende una funzione ed un iteratore e ritorna un iteratore i cui elementi sono il risultato dell'operazione</p>
 
 </div>
@@ -14037,8 +13864,8 @@ seconda iterazione
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>ricordiamoci che il risultato delle operazioni sugli iteratori, quando possibile, è a sua volta un iteratore!</p>
-<p>siamo noi che dobbiamo esplicitamente <strong>concretizzare</strong> l'iterazione</p>
+<p>Ricordiamoci che il risultato delle operazioni sugli iteratori, quando possibile, è a sua volta un iteratore!</p>
+<p>Siamo noi che dobbiamo esplicitamente <strong>concretizzare</strong> l'iterazione</p>
 
 </div>
 </div>
@@ -14133,7 +13960,7 @@ seconda iterazione
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">numeri</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="n">positivi</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">numeri</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">numero</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">numero</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">positivi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">positivi</span><span class="p">)</span>
@@ -14413,7 +14240,7 @@ seconda iterazione
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Map-Reduce">Map Reduce<a class="anchor-link" href="#Map-Reduce">&#182;</a></h2><p>il famoso metodo MAP-REDUCE è una combinazione di queste idee:</p>
+<h2 id="Map---Reduce">Map - Reduce<a class="anchor-link" href="#Map---Reduce">&#182;</a></h2><p>il famoso metodo MAP-REDUCE è una combinazione di queste idee:</p>
 <ul>
 <li>prendo una sequenza, la divido in sottosequenze</li>
 <li>invio le sequenze a diversi computer</li>
